@@ -1,0 +1,97 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile: Theme Download</title>
+	<link rel="stylesheet" href="themes/freecsgo.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="jqm/jquery.mobile.structure-1.4.5.min.css" />
+  <link rel="stylesheet" href="fa/css/font-awesome.min.css" />
+  <script src="jqm/jquery-1.10.2.min.js"></script>
+  <script src="jqm/jquery.mobile-1.4.5.min.js"></script>
+<style>
+body{margin:0;padding:0;outline:none;border:0;word-wrap:break-word;}
+#main{position:absolute;width:100%;height:100%;max-height:100%;padding:0!important;-webkit-overflow-scrolling: touch;}
+.ui-page {-webkit-backface-visibility:hidden;}
+.ui-mobile-viewport-transitioning .pagesi,
+.ui-mobile-viewport-transitioning .ui-page .pagesi{
+height:100%!important;padding-bottom:0!important
+ }
+a.linkoff {
+   pointer-events: none;
+   cursor: default;
+}
+.menu-attivo{
+  color: #D2591C;
+  text-shadow:none;
+  font-size:18px;
+}
+.ui-navbar li .ui-btn .ui-btn-inner, .ui-navbar li .ui-btn {
+    border: 0 solid red !important;
+}
+.ui-focus,
+.ui-btn:focus {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none ;
+}
+</style>
+</head>
+<body>
+	<div data-role="page" data-theme="a" id="home">
+		<div data-role="header" data-position="inline">
+			<img src="img/logo.png" class="logo"></img>
+		</div>
+		<div data-role="content" data-theme="a">
+			<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
+			
+            <a href="#" class="ui-btn ui-shadow fa fa-facebook">Log in using Facebook</a>
+		</div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-id="main-footer" data-theme="a">
+        <!-- data-id su tutti i footer serve per non farli sparire al cambio di pagina, data-theme per non far perdere lo stile in transizione-->
+        <div data-role="navbar" class="nav-glyphish">
+			<ul>
+				<li><a href="#home" data-transition="slide" data-prefetch="true" class="linkoff"><i class="fa fa-facebook menu-attivo"></i></a></li>
+                <li><a href="#page2" data-transition="slide" data-prefetch="true"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" data-transition="slide" data-prefetch="true"><i class="fa fa-facebook"></i></a></li>
+			</ul>
+		</div><!-- /navbar -->
+        </div>
+	</div>
+    
+    <div data-role="page" data-theme="a" id="page2">
+    <div data-role="content" data-theme="a">
+			<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
+			<pre>
+<strong>&lt;link rel=&quot;stylesheet&quot; href=&quot;themes/freecsgo.min.css&quot; /&gt;</strong>
+<strong>&lt;link rel=&quot;stylesheet&quot; href=&quot;themes/jquery.mobile.icons.min.css&quot; /&gt;</strong>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css&quot; /&gt;
+&lt;script src=&quot;http://code.jquery.com/jquery-1.11.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js&quot;&gt;&lt;/script&gt;
+			</pre>
+			<p>This is content color swatch "A" and a preview of a <a href="#" class="ui-link">link</a>.</p>
+			
+            <a href="#" class="ui-btn ui-shadow fa fa-facebook">Log in using Facebook</a>
+		</div>
+       <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-id="main-footer" data-theme="a">
+        <div data-role="navbar" class="nav-glyphish">
+			<ul>
+				<li><a href="#home" data-transition="slide" data-prefetch="true" data-direction="reverse"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#page2" data-transition="slide" data-prefetch="true" class="linkoff"><i class="fa fa-facebook menu-attivo"></i></a></li>
+                <li><a href="#" data-transition="slide" data-prefetch="true"><i class="fa fa-facebook"></i></a></li>
+			</ul>
+		</div><!-- /navbar -->
+        </div>
+    </div>
+
+<script>
+    $(document).one("mobileinit", function () {
+        // Setting #container div as a jqm pageContainer
+        $.mobile.pageContainer = $('#main');
+
+        // Setting default page transition to slide
+        $.mobile.defaultPageTransition = 'slide';
+    });
+</script>
+</body>
+</html>
