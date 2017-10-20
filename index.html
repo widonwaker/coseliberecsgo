@@ -2,7 +2,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>jQuery Mobile: Theme Download</title>
+	<title>Free CS GO Stuff</title>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>  
+    <script type="text/javascript" src="js/onesignal.js"></script>
 	<link rel="stylesheet" href="themes/freecsgo.min.css" />
 	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
   <link rel="stylesheet" href="jqm/jquery.mobile.structure-1.4.5.min.css" />
@@ -39,6 +42,9 @@ a.linkoff {
 </style>
 </head>
 <body>
+<script src="js/appodeal.js"></script>
+<script src="js/import_home.js"></script>
+
 	<div data-role="page" data-theme="a" id="home">
 		<div data-role="header" data-position="inline">
 			<img src="img/logo.png" class="logo"></img>
@@ -68,12 +74,13 @@ a.linkoff {
 PullToRefresh.init({
   mainElement: '#maincontent',
   onRefresh: function() { 
-     window.location.reload(); 
+     Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO);
+     //window.location.reload(); 
   },
     distThreshold : 50, // Minimum distance required to trigger the refresh.
     iconArrow: '<span class="fa fa-arrow-down"></span>', // The icon for both instructionsPullToRefresh and instructionsReleaseToRefresh
-    instructionsPullToRefresh: "Pull down to DESTROY THE WORLD",
-    instructionsReleaseToRefresh: "Release to ENABLE BOMB"
+    instructionsPullToRefresh: "Pull down to refresh",
+    instructionsReleaseToRefresh: "Release to refresh"
 });</script>
 	</div>
     
@@ -112,7 +119,7 @@ PullToRefresh.init({
     });
 	
 var barFilter = document.getElementById('pbar');
-barFilter.style.width='40%';
+barFilter.style.width=percentBar+"%";
 </script>
 </body>
 </html>
