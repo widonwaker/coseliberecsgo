@@ -12,7 +12,8 @@ function loading(showOrHide) {
         $.mobile.loading(showOrHide);
     }, 1); 
 }
-     
+
+function loadBar () {     
 var percentBar=0;	    
             $.ajax('http://apploadin.com/FreeCSGOstuff/goal.php', 
                 {
@@ -32,3 +33,5 @@ var percentBar=0;
                         $('#output').empty().html(s);
                     }
                 });
+}
+loadBar();
