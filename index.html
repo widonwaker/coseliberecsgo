@@ -43,7 +43,7 @@ a.linkoff {
 		<div data-role="header" data-position="inline">
 			<img src="img/logo.png" class="logo"></img>
 		</div>
-		<div data-role="content" data-theme="a">
+		<div data-role="content" data-theme="a" id="maincontent">
 			<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
             
             <div class="progress-bar orange stripes">
@@ -62,6 +62,19 @@ a.linkoff {
 			</ul>
 		</div><!-- /navbar -->
         </div>
+        
+         <script src="js/pulltorefresh.min.js"> </script> 
+ <script> /* global PullToRefresh */
+PullToRefresh.init({
+  mainElement: '#maincontent',
+  onRefresh: function() { 
+     window.location.reload(); 
+  },
+    distThreshold : 50, // Minimum distance required to trigger the refresh.
+    iconArrow: '<span class="fa fa-arrow-down"></span>', // The icon for both instructionsPullToRefresh and instructionsReleaseToRefresh
+    instructionsPullToRefresh: "Pull down to DESTROY THE WORLD",
+    instructionsReleaseToRefresh: "Release to ENABLE BOMB"
+});</script>
 	</div>
     
     <div data-role="page" data-theme="a" id="page2">
