@@ -43,7 +43,6 @@ a.linkoff {
 </head>
 <body>
 <script src="js/appodeal.js"></script>
-<script src="js/import_home.js"></script>
 
 	<div data-role="page" data-theme="a" id="home">
 		<div data-role="header" data-position="inline">
@@ -68,13 +67,12 @@ a.linkoff {
 			</ul>
 		</div><!-- /navbar -->
         </div>
-        
+         <script src="js/import_home.js"></script>
          <script src="js/pulltorefresh.min.js"> </script> 
  <script> /* global PullToRefresh */
 PullToRefresh.init({
   mainElement: '#maincontent',
   onRefresh: function() { 
-     Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO);
 	 loadBar();
      //window.location.reload(); 
   },
@@ -118,9 +116,6 @@ PullToRefresh.init({
         // Setting default page transition to slide
         $.mobile.defaultPageTransition = 'slide';
     });
-	
-var barFilter = document.getElementById('pbar');
-barFilter.style.width=percentBar+"%";
 </script>
 </body>
 </html>

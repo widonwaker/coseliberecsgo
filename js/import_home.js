@@ -13,8 +13,9 @@ function loading(showOrHide) {
     }, 1); 
 }
 
-function loadBar () {     
-var percentBar=0;	    
+var percentBar=0;	
+var barFilter = document.getElementById('pbar'); 
+function loadBar () {        
             $.ajax('http://apploadin.com/FreeCSGOstuff/goal.php', 
                 {
                     dataType: "json",
@@ -23,15 +24,15 @@ var percentBar=0;
                     contentType: 'application/json',
                     success: function (data, status) {
                         $.each(data, function (i, item) {
-                            $('<li />')
                             percentBar = (item.attuale * 100) / item.obiettivo;
-							 //content.appendTo(makePage);
+                            barFilter.style.width=percentBar+"%";
 	                        
                         });
                     },
                     error: function (xhr, d, s) {
-                        $('#output').empty().html(s);
+                        //$('#output').empty().html(s);
                     }
                 });
-}
+};
+
 loadBar();
