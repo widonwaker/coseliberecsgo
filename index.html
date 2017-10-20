@@ -75,6 +75,7 @@ PullToRefresh.init({
   mainElement: '#maincontent',
   onRefresh: function() { 
      Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO);
+	 loadBar();
      //window.location.reload(); 
   },
     distThreshold : 50, // Minimum distance required to trigger the refresh.
