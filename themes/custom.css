@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
+
+body{margin:0;padding:0;outline:none;border:0;word-wrap:break-word;}
+#main{position:absolute;width:100%;height:100%;max-height:100%;padding:0!important;-webkit-overflow-scrolling: touch;}
+.ui-page {-webkit-backface-visibility:hidden;}
+.ui-mobile-viewport-transitioning .pagesi,
+.ui-mobile-viewport-transitioning .ui-page .pagesi{
+height:100%!important;padding-bottom:0!important
+ }
+a.linkoff {
+   pointer-events: none;
+   cursor: default;
+}
+.menu-attivo{
+  color: #E11E06; /*#D2591C;*/
+  text-shadow:none;
+  font-size:1.5em;
+}
+.ui-navbar li .ui-btn .ui-btn-inner, .ui-navbar li .ui-btn {
+    border: 0 solid red !important;
+}
+.ui-focus,
+.ui-btn:focus {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none ;
+}
+.important {
+	color: #E11E06;
+	text-shadow: none;
+}
+
+#custom-collapsible a{
+	color: #E11E06 !important;
+	text-shadow: none !important;
+}
+
+#custom-collapsible * {
+	border: none !important;
+    background: transparent !important;
+}
+* p {
+	font-family: 'Saira Extra Condensed', sans-serif !important;
+}
