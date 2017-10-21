@@ -94,12 +94,15 @@ PullToRefresh.init({
 				<li><a href="#home" data-transition="slide" data-prefetch="true" data-direction="reverse"><i class="fa fa-lg fa-trophy"></i></a></li>
                 <li><a href="#page2" data-transition="slide" data-prefetch="true" data-direction="reverse"><i class="fa fa-lg fa-bar-chart"></i></a></li>
                 <li><a href="#profile" data-transition="slide" data-prefetch="true" class="linkoff"><i class="fa fa-lg fa-user menu-attivo"></i></a></li>
-                <li><a href="#info" data-transition="slide" data-prefetch="true" class="linkoff"><i class="fa fa-lg fa-info"></i></a></li>
+                <li><a href="#info" data-transition="slide" data-prefetch="true"><i class="fa fa-lg fa-info"></i></a></li>
 			</ul>
 		</div><!-- /navbar -->
         </div>
         <script>
+		document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
 		alert(device.uuid);
+		}
 		</script>
     </div>
     
