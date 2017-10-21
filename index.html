@@ -14,23 +14,9 @@
   <link rel="stylesheet" href="themes/custom.css" />
   <script src="jqm/jquery-1.10.2.min.js"></script>
   <script src="jqm/jquery.mobile-1.4.5.min.js"></script>
-  
-<script>
-function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
-	
-function onDeviceReady() {
-        var vInfo =  'Device Name: '     + device.name     + '\n' +
-                            'Device Cordova: '  + device.cordova  + '\n' +
-                            'Device Platform: ' + device.platform + '\n' +
-                            'Device UUID: '     + device.uuid     + '\n' +
-                            'Device Version: '  + device.version;
-       alert(vInfo);
-	   }
-</script>  
+   
 </head>
-<body onLoad="onLoad();">
+<body>
 <script src="js/appodeal.js"></script>
 
 	<div data-role="page" data-theme="a" id="home">
@@ -114,7 +100,7 @@ PullToRefresh.init({
     <div data-role="content" data-theme="a">
 			<p>Current goal is based on the average active users. More users will collect points everyday, more of them will have a chance to win an item.</p>
 			
-			<p>This is content color swatch "A" and a preview of a <a href="#" class="ui-link">link</a>.</p>
+			<a href="#" onClick="alert(device.uuid)" class="ui-btn ui-shadow">Get UUID</a>
 			
 		</div>
        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-id="main-footer" data-theme="a">
