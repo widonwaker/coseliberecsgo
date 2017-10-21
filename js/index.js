@@ -10,7 +10,7 @@ document.addEventListener('deviceready', function () {
   };
 
   window.plugins.OneSignal
-    .startInit("76de9b2b-577d-44c6-844a-dc9228b9597f", "440027051507")
+    .startInit("a0d44fd6-1a29-4cc0-8315-96f8b2efe454", "440027051507")
     .handleNotificationOpened(notificationOpenedCallback)
     .endInit();
   

@@ -13,28 +13,29 @@ function loading(showOrHide) {
     }, 1); 
 }
 
-var percentBar=0;	
-var barFilter = document.getElementById('pbar'); 
-function loadBar () {        
-            $.ajax('http://apploadin.com/FreeCSGOstuff/goal.php', 
+     
+            $.ajax('http://apploadin.com/FreeCSGOstuff/faqs.php', 
                 {
                     dataType: "json",
                     jsonp: "jsoncallback",
                     method: 'get',
                     contentType: 'application/json',
                     success: function (data, status) {
+						var _ul = $('<div />').attr('data-role', 'collapsibleset').attr('data-collapsed-icon', 'false')
+						.attr('data-collapsed-icon', 'false')
+						.attr('data-expanded-icon', 'false')
+						.attr('id', 'custom-collapsible');
                         $.each(data, function (i, item) {
-                            percentBar = (item.attuale * 100) / item.obiettivo;
-							if (percentBar>100) percentBar = 100;
-                            barFilter.style.width=percentBar+"%";
-							if (item.attuale>item.obiettivo) item.attuale=item.obiettivo;
-	                        $('#goal').append('Current goal: '+item.attuale+' / '+item.obiettivo+' points');
+							$('<div />').attr('data-role', 'collapsible')
+							.append('<h3>'+item.question+'</h3><p>'+item.answer+'</p>')
+							.appendTo(_ul);
+	                        //$('#custom-collapsible').append('<div data-role="collapsible"><h3>'+item.question+'</h3><p>'+item.answer+'</p></div>');
                         });
+						$('#faqs_output').empty().append(_ul).enhanceWithin();
                     },
                     error: function (xhr, d, s) {
                         //$('#output').empty().html(s);
                     }
                 });
-};
 
-loadBar();
+
