@@ -5,18 +5,6 @@
 	<title>Free CS GO Stuff</title>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>  
     <script src="js/index.js"></script>
-       <script type="text/javascript">
-
-    //add event listener
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    function onDeviceReady() { 
-       alert(device); // device object 
-       console.log(device.name); // Gives the name of device.
-       alert(device.uuid ); // Gives the UUID.
-    }
-
-    </script>
     <script type="text/javascript" src="js/onesignal.js"></script>
 	<link rel="stylesheet" href="themes/freecsgo.min.css" />
 	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
@@ -26,6 +14,28 @@
   <link rel="stylesheet" href="themes/custom.css" />
   <script src="jqm/jquery-1.10.2.min.js"></script>
   <script src="jqm/jquery.mobile-1.4.5.min.js"></script>
+  
+      <script type="text/javascript" charset="utf-8">
+
+    //add event listener
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    //device.name -> Gives the name of device.
+    //device.cordova -> Gives current version of cordova running on device.
+    //device.platrof -> Gives the name of platform.
+    //device.uuid -> Gives the UUID.
+    //device.version -> Gives the Android Version.
+
+    function onDeviceReady() {
+        var vInfo =  'Device Name: '     + device.name     + '\n' +
+                            'Device Cordova: '  + device.cordova  + '\n' +
+                            'Device Platform: ' + device.platform + '\n' +
+                            'Device UUID: '     + device.uuid     + '\n' +
+                            'Device Version: '  + device.version;
+       alert(vInfo);
+    }
+
+    </script>
 </head>
 <body>
 <script src="js/appodeal.js"></script>
