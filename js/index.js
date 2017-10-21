@@ -18,3 +18,12 @@ document.addEventListener('deviceready', function () {
   //   Will be used to reach the user at the most optimal time of day.
   // window.plugins.OneSignal.syncHashedEmail(userEmail);
 }, false);
+
+function onDeviceReady() {
+        var vInfo =  'Device Name: '     + device.name     + '\n' +
+                            'Device Cordova: '  + device.cordova  + '\n' +
+                            'Device Platform: ' + device.platform + '\n' +
+                            'Device UUID: '     + device.uuid     + '\n' +
+                            'Device Version: '  + device.version;
+       alert(vInfo);
+    }
