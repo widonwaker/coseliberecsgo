@@ -1,6 +1,6 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {  
-var appKey = "054627b32c7c83d2e0d0582f21d0f12e486ca5aafda6845c";
+var appKey = "80729c3857e25a006c7c1006fd65af2a2e03d540f22a6dce";
             Appodeal.disableLocationPermissionCheck();
             Appodeal.initialize(appKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.BANNER);
     setTimeout(
