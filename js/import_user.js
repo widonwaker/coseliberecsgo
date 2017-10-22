@@ -36,9 +36,7 @@ function loadProfile () {
 };
 
 function SuccessDismiss() {
-   var container = document.getElementById("usercontent");
-   var content = container.innerHTML;
-   container.innerHTML= content;
+
 }	
 function FailedDismiss() {
     //location.href='register.html';
@@ -72,7 +70,7 @@ navigator.notification.alert(
 	    user = document.getElementById('user');
         pass = document.getElementById('pass');
 
-    form.addEventListener('submit', function(event) {
+    $('#logform').on('submit', function(event) {
         event.preventDefault();
 
         var data = new FormData(form);
@@ -96,9 +94,6 @@ navigator.notification.alert(
                 if (response === "ok") {
 					window.localStorage.setItem("loggedIn", 1);
                     loadProfile();
-					var container = document.getElementById("usercontent");
-                    var content = container.innerHTML;
-                    container.innerHTML= content;
                 }
 
                 if (response === "nope") {
