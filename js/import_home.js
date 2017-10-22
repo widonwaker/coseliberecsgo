@@ -27,7 +27,7 @@ function loadBar () {
                             percentBar = (item.attuale * 100) / item.obiettivo;
 							if (percentBar>100) percentBar = 100;
                             barFilter.style.width=percentBar+"%";
-							if (item.attuale>item.obiettivo) item.attuale=item.obiettivo;
+							if (item.attuale > item.obiettivo) { item.attuale=item.obiettivo; }
 	                        $('#goal').empty().append('Current goal: '+item.attuale+' / '+item.obiettivo+' points');
                         });
                     },

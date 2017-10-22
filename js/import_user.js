@@ -1,4 +1,4 @@
-document.getElementById('uniqueid').value=device.uuid;
+
 
 /*$(document).on({
     ajaxSend: function () { loading('show'); },
@@ -40,14 +40,15 @@ function loadBar () {
 function SuccessDismiss() {
    $("#reglogforms").hide();
    $("#loggedin").show();
+   location.href='index.html#profile';
 }	
 function FailedDismiss() {
     //location.href='register.html';
 }	
 
 function register(){
-$.post("http://apploadin.com/FreeCSGOstuff/reguser.php", {username:$("#username").val(), uniqueid:$("#uniqueid").val(), refid:$("#refid").val(), password:$("#password").val()}).done(function(data){
-if(!data){
+$.post("http://apploadin.com/FreeCSGOstuff/reguser.php", {username:$("#username").val(), uniqueid:device.uuid, refid:$("#refid").val(), password:$("#password").val()}).done(function(data){
+if(data){
 navigator.notification.alert(
     'Registrazione effettuata',  // message
     SuccessDismiss,         // callback
