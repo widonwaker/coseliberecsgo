@@ -97,10 +97,35 @@ PullToRefresh.init({
     
     
             <div data-role="page" data-theme="a" id="profile">
-    <div data-role="content" data-theme="a">
-			<p>Current goal is based on the average active users. More users will collect points everyday, more of them will have a chance to win an item.</p>
-			
-			<a href="#" onClick="alert(device.uuid)" class="ui-btn ui-shadow">Get UUID</a>
+              <div data-role="content" data-theme="a">
+                <div id="reglogforms">
+                LOGIN
+                <form id="logform">
+                  <label for="user"><p>Username:</p></label>
+                  <input data-mini="true" name="user" id="user" value="" type="text">
+                  <label for="pass"><p>Password:</p></label>
+                  <input data-clear-btn="true" data-mini="true" name="pass" id="pass" value="" type="password">
+                  <input type="submit" value="Login" onClick="login();"/>
+                </form>
+                <br><hr>
+                <p>Or register if you don't have an account yet:</p>
+                <br>
+                REGISTER
+			    <form id="regform">
+                  <label for="username"><p>Username:</p></label>
+                  <input data-mini="true" name="username" id="username" value="" type="text">
+                  <label for="password"><p>Password:</p></label>
+                  <input data-clear-btn="true" data-mini="true" name="password" id="password" value="" type="password">
+                  <label for="refid"><p>Referrer ID:</p></label>
+                  <input data-mini="true" name="refid" id="refid" value="" type="text">
+
+                  <input data-mini="true" name="uniqueid" id="uniqueid" type="text">
+                  <input type="submit" value="Register" onClick="register();"/>
+                </form>
+                </div>
+                <div id="loggedin" style="display:none";>
+                   <p>Logged in as...</p>
+                </div>
 			
 		</div>
        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-id="main-footer" data-theme="a">
@@ -113,7 +138,7 @@ PullToRefresh.init({
 			</ul>
 		</div><!-- /navbar -->
         </div>
-        
+       <script src="js/import_user.js"></script>
     </div>
     
     
