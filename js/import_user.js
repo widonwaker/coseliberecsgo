@@ -46,7 +46,8 @@ function FailedDismiss() {
     //location.href='register.html';
 }	
 
-function register(){
+$('#regform').on('submit', function(event) {
+    event.preventDefault();
 $.post("http://apploadin.com/FreeCSGOstuff/reguser.php", {username:$("#username").val(), uniqueid:device.uuid, refid:$("#refid").val(), password:$("#password").val()}).done(function(data){
 if(data){
 navigator.notification.alert(
@@ -64,4 +65,4 @@ navigator.notification.alert(
 );
 }
 });
-}
+});
