@@ -1,6 +1,9 @@
+        if(window.localStorage.getItem("loggedIn") == 1) {
+              $("#reglogforms").hide();
+              $("#loggedin").show();
+        }
 
-
-/*$(document).on({
+$(document).on({
     ajaxSend: function () { loading('show'); },
     ajaxStart: function () { loading('show'); },
     ajaxStop: function () { loading('hide'); },
@@ -13,10 +16,9 @@ function loading(showOrHide) {
     }, 1); 
 }
 
-var percentBar=0;	
-var barFilter = document.getElementById('pbar'); 
-function loadBar () {        
-            $.ajax('http://apploadin.com/FreeCSGOstuff/goal.php', 
+
+function loadProfile () {        
+            $.ajax('http://apploadin.com/FreeCSGOstuff/profile.php', 
                 {
                     dataType: "json",
                     jsonp: "jsoncallback",
@@ -24,23 +26,20 @@ function loadBar () {
                     contentType: 'application/json',
                     success: function (data, status) {
                         $.each(data, function (i, item) {
-                            percentBar = (item.attuale * 100) / item.obiettivo;
-							if (percentBar>100) percentBar = 100;
-                            barFilter.style.width=percentBar+"%";
-							if (item.attuale>item.obiettivo) item.attuale=item.obiettivo;
-	                        $('#goal').empty().append('Current goal: '+item.attuale+' / '+item.obiettivo+' points');
+	                        $('#loggedin').append('<p>'+item.nickname+'</p><br><p> Ref ID: '+item.id+'</p>');
                         });
                     },
                     error: function (xhr, d, s) {
                         //$('#output').empty().html(s);
                     }
                 });
-};*/
+};
 
 function SuccessDismiss() {
+   //window.localStorage.setItem("loggedIn", 1);
    $("#reglogforms").hide();
    $("#loggedin").show();
-   location.href='index.html#profile';
+   loadProfile();
 }	
 function FailedDismiss() {
     //location.href='register.html';
