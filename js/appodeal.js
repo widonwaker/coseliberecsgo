@@ -1,4 +1,4 @@
-//document.addEventListener('deviceready', onDeviceReady, false);
+document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
   alert('device is ready, appodeal should initialize');
