@@ -1,6 +1,7 @@
         if(window.localStorage.getItem("loggedIn") == 1) {
               $("#reglogforms").hide();
               $("#loggedin").show();
+			  var usernick = window.localStorage.getItem("nickname");
 			  loadProfile();
         }
 
@@ -21,10 +22,8 @@ function loading(showOrHide) {
 function loadProfile () {        
             $.ajax('http://apploadin.com/FreeCSGOstuff/profile.php', 
                 {
-                    dataType: "json",
-                    jsonp: "jsoncallback",
-                    method: 'get',
-                    contentType: 'application/json',
+                    type: 'POST',
+                    data: { nickname: usernick },
                     success: function (data, status) {
                         $.each(data, function (i, item) {
 	                        $('#loggedin').append('<p style="display: inline;">Logged in as</p> ') 
@@ -97,6 +96,7 @@ navigator.notification.alert(
 				
                 if (response === "ok") {
 					window.localStorage.setItem("loggedIn", 1);
+					window.localStorage.setItem("nickname", user);
 					location.reload(); 
                 }
 
