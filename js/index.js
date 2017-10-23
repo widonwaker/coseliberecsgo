@@ -13,14 +13,6 @@ document.addEventListener('deviceready', function () {
     .startInit("a0d44fd6-1a29-4cc0-8315-96f8b2efe454", "440027051507")
     .handleNotificationOpened(notificationOpenedCallback)
     .endInit();
-  
-  var appKey = "054627b32c7c83d2e0d0582f21d0f12e486ca5aafda6845c";
-            Appodeal.disableLocationPermissionCheck();
-            Appodeal.initialize(appKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.BANNER);
-}
-document.addEventListener('onBannerLoaded', function(){
-          Appodeal.show(Appodeal.BANNER_TOP);
-         });
 
   
   // Sync hashed email if you have a login system or collect it.
