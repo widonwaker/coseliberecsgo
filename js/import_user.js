@@ -1,6 +1,7 @@
         if(window.localStorage.getItem("loggedIn") == 1) {
               $("#reglogforms").hide();
               $("#loggedin").show();
+			  loadProfile();
         }
 
 $(document).on({
@@ -36,7 +37,7 @@ function loadProfile () {
 };
 
 function SuccessDismiss() {
-
+	//
 }	
 function FailedDismiss() {
     //location.href='register.html';
@@ -94,6 +95,7 @@ navigator.notification.alert(
                 if (response === "ok") {
 					window.localStorage.setItem("loggedIn", 1);
                     loadProfile();
+					location.href='index.html#profile';
                 }
 
                 if (response === "nope") {
