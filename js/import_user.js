@@ -27,7 +27,10 @@ function loadProfile () {
                     contentType: 'application/json',
                     success: function (data, status) {
                         $.each(data, function (i, item) {
-	                        $('#loggedin').append('<p>'+item.nickname+'</p><br><p> Ref ID: '+item.id+'</p>');
+	                        $('#loggedin').append('<p style="display: inline;">Logged in as</p> ') 
+							.append('<p class="important" style="display: inline;">'+item.nickname+'</p></h3>')
+							.append('<br><p style="display: inline;">Ref ID: </p>')
+							.append('<p class="important" style="display: inline;">'+item.id+'</p>');
                         });
                     },
                     error: function (xhr, d, s) {
