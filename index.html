@@ -32,7 +32,7 @@
             
             <p id="goal" class="important"></p>
 			
-            <a href="#" onClick="test();" class="ui-btn ui-shadow">Collect daily point</a>
+            <a href="#" onClick="Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO)" class="ui-btn ui-shadow">Collect daily point</a>
 		</div>
         <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-id="main-footer" data-theme="a">
         <!-- data-id su tutti i footer serve per non farli sparire al cambio di pagina, data-theme per non far perdere lo stile in transizione-->
@@ -90,7 +90,7 @@ PullToRefresh.init({
                   <label for="user"><p>Username:</p></label>
                   <input data-mini="true" name="user" id="user" value="" type="text">
                   <label for="pass"><p>Password:</p></label>
-                  <input data-clear-btn="true" data-mini="true" name="pass" id="pass" value="" type="password">
+                  <input data-mini="true" name="pass" id="pass" value="" type="password">
                   <input type="submit" value="Login"/>
                 </form>
                 <br><hr>
