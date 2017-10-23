@@ -48,3 +48,6 @@ a.linkoff {
     box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
 	border: none;
 }
+#loggedin {
+	font-size: 22px !important;
+}
