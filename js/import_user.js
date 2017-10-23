@@ -94,7 +94,6 @@ navigator.notification.alert(
 				
                 if (response === "ok") {
 					window.localStorage.setItem("loggedIn", 1);
-                    loadProfile();
 					location.href='index.html#profile';
                 }
 
