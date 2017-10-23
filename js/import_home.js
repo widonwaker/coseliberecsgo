@@ -25,9 +25,9 @@ function loadBar () {
                     success: function (data, status) {
                         $.each(data, function (i, item) {
                             percentBar = (item.attuale * 100) / item.obiettivo;
-							if (percentBar>100) percentBar = 100;
+							if (percentBar>100) { percentBar = 100; }
                             barFilter.style.width=percentBar+"%";
-							if (item.attuale > item.obiettivo) { item.attuale=item.obiettivo; }
+							if (parseInt(item.attuale) >= parseInt(item.obiettivo)) { item.attuale = item.obiettivo; }
 	                        $('#goal').empty().append('Current goal: '+item.attuale+' / '+item.obiettivo+' points');
                         });
                     },

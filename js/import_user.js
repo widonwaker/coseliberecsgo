@@ -37,7 +37,7 @@ function loadProfile () {
 };
 
 function SuccessDismiss() {
-	//
+	location.reload(); 
 }	
 function FailedDismiss() {
     //location.href='register.html';
@@ -94,7 +94,7 @@ navigator.notification.alert(
 				
                 if (response === "ok") {
 					window.localStorage.setItem("loggedIn", 1);
-					location.href='index.html#profile';
+					location.reload(); 
                 }
 
                 if (response === "nope") {
