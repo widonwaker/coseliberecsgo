@@ -51,8 +51,8 @@
 	<plugin name="cordova-plugin-globalization" source="npm" />
 	
 	<plugin name="onesignal-cordova-plugin" spec="^2.1.1" source="npm" />
-	   <plugin spec="https://github.com/appodeal/appodeal-cordova-plugin.git" source="git"/>
-	 <!--<plugin name="com.appodeal.plugin" source="npm"/>-->
+	   <!--<plugin spec="https://github.com/appodeal/appodeal-cordova-plugin.git" source="git"/>
+	 <plugin name="com.appodeal.plugin" source="npm"/>-->
 
    <access origin="*"/>
     <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
