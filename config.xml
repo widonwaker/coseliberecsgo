@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.apploadin.freecsgostuffGP" 
+        id        = "com.apploadin.freecsgostuff" 
         version   = "1.0.0"
 	ios-CFBundleVersion = "1.0.0"> 
 
@@ -15,7 +15,7 @@
         Stefano Iodice
     </author>
     
-	 <preference name="phonegap-version" value="cli-6.3.0" /> 
+	 <preference name="phonegap-version" value="cli-6.5.0" /> 
 	
 	<preference name="permissions"                value="none"/>
 
