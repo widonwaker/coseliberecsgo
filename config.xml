@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        android-packageName="com.apploadin.freecsgostuffGP"
-        ios-CFBundleIdentifier="com.apploadin.freecsgostuff"
+        id        = "com.apploadin.freecsgostuff" 
         version   = "1.0.0"
 	ios-CFBundleVersion = "1.0.0"> 
 
