@@ -8,7 +8,6 @@ function onDeviceReady() {
 	else if (devicePlatform === "iOS") {
 		    var appKey = "054627b32c7c83d2e0d0582f21d0f12e486ca5aafda6845c";
 	}
-	        alert(appKey);
             Appodeal.disableLocationPermissionCheck();
             Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO);
             Appodeal.initialize(appKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.BANNER);
