@@ -18,6 +18,11 @@ function loading(showOrHide) {
     }, 1); 
 }
 
+function logout() {
+	window.localStorage.removeItem("nickname");
+	window.localStorage.removeItem("loggedIn");
+	location.reload();
+}
 
 function loadProfile () {        
             $.ajax('http://apploadin.com/FreeCSGOstuff/profile.php', 
@@ -28,8 +33,12 @@ function loadProfile () {
                         $.each(data, function (i, item) {
 	                        $('#loggedin').append('<p style="display: inline;">Logged in as</p> ') 
 							.append('<p class="important" style="display: inline;">'+item.nickname+'</p></h3>')
-							.append('<br><p style="display: inline;">Ref ID: </p>')
-							.append('<p class="important" style="display: inline;">'+item.id+'</p>');
+							.append('<br><p style="display: inline;">You Referrer ID: </p>')
+							.append('<p class="important" style="display: inline;">'+item.id+'</p>')
+							.append($('<form />').attr('id','steamform')
+							.append('<label for="steam"><p>Your Steam Trade URL:</p></label>')
+				            .append('<input data-mini="true" type="text" name="steam" id="steam" />'))
+							.append('<br><a href="#" onClick="logout();" class="ui-btn ui-shadow">Logoutl</a>');
                         });
                     },
                     error: function (xhr, d, s) {
@@ -96,7 +105,7 @@ navigator.notification.alert(
 				
                 if (response === "ok") {
 					window.localStorage.setItem("loggedIn", 1);
-					window.localStorage.setItem("nickname", user);
+					window.localStorage.setItem("nickname", user.value);
 					location.reload(); 
                 }
 
