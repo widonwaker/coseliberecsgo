@@ -19,8 +19,9 @@
 <script src="js/appodeal.js"></script>
 
 	<div data-role="page" data-theme="a" id="home">
+    <script src="js/collect.js"></script>
 		<div data-role="header" data-position="inline">
-			<img src="img/logo.png" class="logo"></img>
+			<h1><p>Free CS GO Stuff</p></h1>
 		</div>
 		<div data-role="content" data-theme="a" id="maincontent">
 			<p>This contest will end when the goal is reached. Visit <i class="fa fa-info"></i> page for more informations.</p>
@@ -31,14 +32,15 @@
             
             <p id="goal" class="important"></p>
 			
-            <a href="#" onClick="Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO)" class="ui-btn ui-shadow">Test interstitial</a>
+            <a href="#" onClick="collectPoint()" class="ui-btn ui-shadow" id="collect">Collect Daily Point</a>
+            <p id="collectWarn" class="important">You have already collected your daily point. Come back tomorrow.</p>
 		</div>
         <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-id="main-footer" data-theme="a">
         <!-- data-id su tutti i footer serve per non farli sparire al cambio di pagina, data-theme per non far perdere lo stile in transizione-->
         <div data-role="navbar" class="nav-glyphish">
 			<ul>
 				<li><a href="#home" data-transition="slide" data-prefetch="true" class="linkoff"><i class="fa fa-lg fa-trophy menu-attivo"></i></a></li>
-                <li><a href="#page2" data-transition="slide" data-prefetch="true"><i class="fa fa-lg fa-lg fa-bar-chart"></i></a></li>
+                <li><a href="#classifica" data-transition="slide" data-prefetch="true"><i class="fa fa-lg fa-lg fa-bar-chart"></i></a></li>
                 <li><a href="#profile" data-transition="slide" data-prefetch="true"><i class="fa fa-lg fa-user"></i></a></li>
                 <li><a href="#info" data-transition="slide" data-prefetch="true"><i class="fa fa-lg fa-info"></i></a></li>
 			</ul>
@@ -51,7 +53,7 @@ PullToRefresh.init({
   mainElement: '#maincontent',
   onRefresh: function() { 
 	 loadBar();
-     //window.location.reload(); 
+     dataCheck();
   },
     distThreshold : 50, // Minimum distance required to trigger the refresh.
     iconArrow: '<span class="fa fa-lg fa-arrow-down"></span>', // The icon for both instructionsPullToRefresh and instructionsReleaseToRefresh
@@ -60,28 +62,37 @@ PullToRefresh.init({
 });</script>
 	</div>
     
-    <div data-role="page" data-theme="a" id="page2">
+    <div data-role="page" data-theme="a" id="classifica">
+    	<div data-role="header" data-position="inline">
+			<h1><p>Free CS GO Stuff</p></h1>
+		</div>
     <div data-role="content" data-theme="a">
-			<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
+			<p id="expire"></p>
 			
-			<p>This is content color swatch "A" and a preview of a <a href="#" class="ui-link">link</a>.</p>
+			<p id="min_points"></p>
 			
-            <a href="#" class="ui-btn ui-shadow fa fa-lg fa-facebook">Log in using Facebook</a>
+            <div id="rankTable" style="overflow-x:auto;">
+               <!-- ajax call -->
+            </div>
 		</div>
        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-id="main-footer" data-theme="a">
         <div data-role="navbar" class="nav-glyphish">
 			<ul>
 				<li><a href="#home" data-transition="slide" data-prefetch="true" data-direction="reverse"><i class="fa fa-lg fa-trophy"></i></a></li>
-                <li><a href="#page2" data-transition="slide" data-prefetch="true" class="linkoff"><i class="fa fa-lg fa-bar-chart menu-attivo"></i></a></li>
+                <li><a href="#classifica" data-transition="slide" data-prefetch="true" class="linkoff"><i class="fa fa-lg fa-bar-chart menu-attivo"></i></a></li>
                 <li><a href="#profile" data-transition="slide" data-prefetch="true"><i class="fa fa-lg fa-user"></i></a></li>
                 <li><a href="#info" data-transition="slide" data-prefetch="true"><i class="fa fa-lg fa-info"></i></a></li>
 			</ul>
 		</div><!-- /navbar -->
         </div>
+        <script src="js/import_contest.js"></script>
     </div>
     
     
             <div data-role="page" data-theme="a" id="profile">
+               <div data-role="header" data-position="inline">
+			      <h1><p>Free CS GO Stuff</p></h1>
+		       </div>
               <div data-role="content" data-theme="a" id="usercontent">
                 <div id="reglogforms">
                 <h3><p>Login</p></h3>
@@ -115,7 +126,7 @@ PullToRefresh.init({
         <div data-role="navbar" class="nav-glyphish">
 			<ul>
 				<li><a href="#home" data-transition="slide" data-prefetch="true" data-direction="reverse"><i class="fa fa-lg fa-trophy"></i></a></li>
-                <li><a href="#page2" data-transition="slide" data-prefetch="true" data-direction="reverse"><i class="fa fa-lg fa-bar-chart"></i></a></li>
+                <li><a href="#classifica" data-transition="slide" data-prefetch="true" data-direction="reverse"><i class="fa fa-lg fa-bar-chart"></i></a></li>
                 <li><a href="#profile" data-transition="slide" data-prefetch="true" class="linkoff"><i class="fa fa-lg fa-user menu-attivo"></i></a></li>
                 <li><a href="#info" data-transition="slide" data-prefetch="true"><i class="fa fa-lg fa-info"></i></a></li>
 			</ul>
@@ -127,7 +138,10 @@ PullToRefresh.init({
     
     
         <div data-role="page" data-theme="a" id="info">
-          <div data-role="content" data-theme="a">
+        <div data-role="header" data-position="inline">
+			<h1><p>Free CS GO Stuff</p></h1>
+		</div>
+          <div data-role="content" data-theme="a" id="thecontest">
              <div id="faqs_output">
                 <!-- ajax call import_faqs.js -->
              </div>
@@ -137,13 +151,24 @@ PullToRefresh.init({
         <div data-role="navbar" class="nav-glyphish">
 			<ul>
 				<li><a href="#home" data-transition="slide" data-prefetch="true" data-direction="reverse"><i class="fa fa-lg fa-trophy"></i></a></li>
-                <li><a href="#page2" data-transition="slide" data-prefetch="true" data-direction="reverse"><i class="fa fa-lg fa-bar-chart"></i></a></li>
+                <li><a href="#classifica" data-transition="slide" data-prefetch="true" data-direction="reverse"><i class="fa fa-lg fa-bar-chart"></i></a></li>
                 <li><a href="#profile" data-transition="slide" data-prefetch="true" data-direction="reverse"><i class="fa fa-lg fa-user"></i></a></li>
                 <li><a href="#info" data-transition="slide" data-prefetch="true" class="linkoff"><i class="fa fa-lg fa-info menu-attivo"></i></a></li>
 			</ul>
 		</div><!-- /navbar -->
         </div>
     <script src="js/import_faqs.js"></script>    
+     <script> /* global PullToRefresh */
+PullToRefresh.init({
+  mainElement: '#thecontest',
+  onRefresh: function() { 
+	 loadContest();
+  },
+    distThreshold : 50, // Minimum distance required to trigger the refresh.
+    iconArrow: '<span class="fa fa-lg fa-arrow-down"></span>', // The icon for both instructionsPullToRefresh and instructionsReleaseToRefresh
+    instructionsPullToRefresh: "Pull down to refresh",
+    instructionsReleaseToRefresh: "Release to refresh"
+});</script>
     </div>
 
 
