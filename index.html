@@ -86,6 +86,17 @@ PullToRefresh.init({
 		</div><!-- /navbar -->
         </div>
         <script src="js/import_contest.js"></script>
+	         <script> /* global PullToRefresh */
+PullToRefresh.init({
+  mainElement: '#thecontest',
+  onRefresh: function() { 
+	 loadContest();
+  },
+    distThreshold : 50, // Minimum distance required to trigger the refresh.
+    iconArrow: '<span class="fa fa-lg fa-arrow-down"></span>', // The icon for both instructionsPullToRefresh and instructionsReleaseToRefresh
+    instructionsPullToRefresh: "Pull down to refresh",
+    instructionsReleaseToRefresh: "Release to refresh"
+});</script>
     </div>
     
     
@@ -158,17 +169,6 @@ PullToRefresh.init({
 		</div><!-- /navbar -->
         </div>
     <script src="js/import_faqs.js"></script>    
-     <script> /* global PullToRefresh */
-PullToRefresh.init({
-  mainElement: '#thecontest',
-  onRefresh: function() { 
-	 loadContest();
-  },
-    distThreshold : 50, // Minimum distance required to trigger the refresh.
-    iconArrow: '<span class="fa fa-lg fa-arrow-down"></span>', // The icon for both instructionsPullToRefresh and instructionsReleaseToRefresh
-    instructionsPullToRefresh: "Pull down to refresh",
-    instructionsReleaseToRefresh: "Release to refresh"
-});</script>
     </div>
 
 
