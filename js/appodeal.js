@@ -10,7 +10,7 @@ function onDeviceReady() {
 	}
             Appodeal.disableLocationPermissionCheck();
             Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO);
-            Appodeal.initialize(appKey, Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.BANNER);
+    Appodeal.initialize(appKey, Appodeal.REWARDED_VIDEO | Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.BANNER);
      setTimeout(
         function() {
           Appodeal.show(Appodeal.BANNER_TOP);

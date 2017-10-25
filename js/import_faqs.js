@@ -1,17 +1,5 @@
 
 
-$(document).on({
-    ajaxSend: function () { loading('show'); },
-    ajaxStart: function () { loading('show'); },
-    ajaxStop: function () { loading('hide'); },
-    ajaxError: function () { loading('hide'); }
-});
- 
-function loading(showOrHide) {
-    setTimeout(function(){
-        $.mobile.loading(showOrHide);
-    }, 1); 
-}
 
      
             $.ajax('http://apploadin.com/FreeCSGOstuff/faqs.php', 
