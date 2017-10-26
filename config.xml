@@ -42,15 +42,14 @@
     <preference name="android-minSdkVersion" value="15" />
 
 	
-	<plugin name="cordova-plugin-splashscreen" source="npm"/>
+	<!--<plugin name="cordova-plugin-splashscreen" source="npm"/>
 	<plugin name="cordova-plugin-dialogs" source="npm"/>
 	<plugin name="cordova-plugin-device" source="npm"/>
 	<plugin name="cordova-plugin-statusbar" source="npm"/>
-	<!--<plugin name="cordova-plugin-network-information" source="npm"/>-->
-	<!--<plugin name="cordova-plugin-geolocation" source="npm"/>-->
+	<plugin name="cordova-plugin-network-information" source="npm"/>
 	<plugin name="cordova-plugin-globalization" source="npm" />
 	
-	<plugin name="onesignal-cordova-plugin" spec="^2.1.1" source="npm" />
+	<plugin name="onesignal-cordova-plugin" spec="^2.1.1" source="npm" />-->
 	   <plugin spec="https://github.com/appodeal/appodeal-cordova-plugin.git" source="git"/>
 	<!--<plugin name="com.appodeal.plugin" source="npm"/>-->
 
