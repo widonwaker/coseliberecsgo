@@ -40,11 +40,12 @@
 	<preference name="DisallowOverscroll"         value="true"/>
 	<preference name="android-build-tool" value="gradle" />
     <preference name="android-minSdkVersion" value="15" />
-
 	
-	<!--<plugin name="cordova-plugin-splashscreen" source="npm"/>
-	<plugin name="cordova-plugin-dialogs" source="npm"/>
+<plugin name="cordova-plugin-dialogs" source="npm"/>
 	<plugin name="cordova-plugin-device" source="npm"/>
+	<!--<plugin name="cordova-plugin-splashscreen" source="npm"/>
+	
+	
 	<plugin name="cordova-plugin-statusbar" source="npm"/>
 	<plugin name="cordova-plugin-network-information" source="npm"/>
 	<plugin name="cordova-plugin-globalization" source="npm" />
