@@ -12,7 +12,7 @@
     <script type="text/javascript">
 document.addEventListener('deviceready', onDeviceReady, false);
     function onDeviceReady() {
-         setTimeout(
+        setTimeout(
         function() {
         var appodealKey;
         if( /(android)/i.test(navigator.userAgent) ) { // set appkey for android || amazon-fireos
@@ -41,6 +41,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
         Appodeal.setCustomStringRule("rule_name", "rule_value");
         
         registerAdEvents();
+        }, 3000);
     }
     
     function setUserSettings() {
@@ -55,7 +56,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
                 console.log("Appodeal Ads Shown");
             }
         });
-        }, 3000);
+ 
     }
     
     function showRewardedVideo() {
