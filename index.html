@@ -11,6 +11,8 @@
     <script type="text/javascript">
 document.addEventListener('deviceready', onDeviceReady, false);
     function onDeviceReady() {
+         setTimeout(
+        function() {
         var appKey;
         if( /(android)/i.test(navigator.userAgent) ) { // set appkey for android || amazon-fireos
           appKey = "0b9fe024c2f4c7e47d66020fa7214a0dd62d91d14e54ad45";
@@ -52,6 +54,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
                 console.log("Appodeal Ads Shown");
             }
         });
+        }, 3000);
     }
     
     function showRewardedVideo() {
