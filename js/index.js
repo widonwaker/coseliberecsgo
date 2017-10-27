@@ -18,7 +18,12 @@ document.addEventListener('deviceready', function () {
   // Sync hashed email if you have a login system or collect it.
   //   Will be used to reach the user at the most optimal time of day.
   // window.plugins.OneSignal.syncHashedEmail(userEmail);
+	
+	    
   
+}, false);
+
+function onDeviceReady() {
   	var devicePlatform = device.platform;
 	if (devicePlatform === "Android") {
             var appKey = "0b9fe024c2f4c7e47d66020fa7214a0dd62d91d14e54ad45";
@@ -26,6 +31,7 @@ document.addEventListener('deviceready', function () {
 	else if (devicePlatform === "iOS") {
 		    var appKey = "054627b32c7c83d2e0d0582f21d0f12e486ca5aafda6845c";
 	}
+	alert(appKey);
             Appodeal.disableLocationPermissionCheck();
     Appodeal.initialize(appKey, Appodeal.REWARDED_VIDEO | Appodeal.INTERSTITIAL | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.BANNER, function(result) {
 	                if (result) { // returns true or false 
@@ -34,8 +40,5 @@ document.addEventListener('deviceready', function () {
 		    alert("error");
 	    }
         });
-	registerAdEvents();
-	
-	    
-  
-}, false);
+
+}
