@@ -1,5 +1,5 @@
 function collectPoint() {
-	Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.REWARDED_VIDEO);
+	Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.REWARDED_VIDEO);
 	var usernick = window.localStorage.getItem("nickname");
 	var now = new Date();
 	var month = now.getUTCMonth() +1;
