@@ -35,7 +35,7 @@ document.addEventListener('deviceready', function () {
 		    console.log("error");
 	    }
         });	    
-  
+  Appodeal.show(Appodeal.BANNER_TOP);
 }, false);
 
 
