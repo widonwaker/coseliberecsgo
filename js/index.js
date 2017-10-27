@@ -26,76 +26,15 @@ document.addEventListener('deviceready', function () {
 	else if (devicePlatform === "iOS") {
 		    var appKey = "054627b32c7c83d2e0d0582f21d0f12e486ca5aafda6845c";
 	}
-  alert(appKey);
             Appodeal.disableLocationPermissionCheck();
             Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO);
-    Appodeal.initialize(appKey, Appodeal.REWARDED_VIDEO | Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.BANNER);
+    Appodeal.initialize(appKey, Appodeal.REWARDED_VIDEO | Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.BANNER, function(result) {
+	                if (result) { // returns true or false 
+                alert("Appodeal initialized");
+            }
+        });
 	registerAdEvents();
 	
 	    
-    function setUserSettings() {
-        Appodeal.setUserId("awesome_user");
-        Appodeal.setAge(25);
-        Appodeal.setGender("female");
-    }
-    
-    function showInterstitial() {
-        Appodeal.show(Appodeal.INTERSTITIAL, function(result) { // check if INTERSTITIAL was shown
-            if (result) { // returns true or false 
-                alert("Appodeal Ads Shown");
-            }
-        });
-    }
-    
-    function showRewardedVideo() {
-        Appodeal.getRewardParameters(function(result) {
-            console.log("Appodeal Reward Amount:" + result.amount);
-            console.log("Appodeal Reward Currency:" + result.currency);
-        });
-        Appodeal.isLoaded(Appodeal.REWARDED_VIDEO, function(result) { // check if REWARDED_VIDEO was loaded
-            if (result) { // returns true or false 
-                Appodeal.showWithPlacement(Appodeal.REWARDED_VIDEO, "rewarded_video_button");
-            } else {
-                Appodeal.cache(Appodeal.REWARDED_VIDEO);
-            }
-        });
-    }
-    
-    function showBanner() {
-          Appodeal.show(Appodeal.BANNER_BOTTOM, function(result) { // check if INTERSTITIAL was shown
-            if (result) { // returns true or false 
-                alert("Appodeal Ads Shown");
-            }
-        });
-    }
-    
-    function hideBanner() {
-        Appodeal.hide(Appodeal.BANNER);
-    }
-
-    function showTestScreen() {
-        Appodeal.showTestScreen();
-    }
-    
-    function registerAdEvents() {
-        Appodeal.setInterstitialCallbacks(function(container){
-            if(container.event == 'onLoaded')
-                document.getElementById("callbackContainer").innerHTML = "Appodeal. Interstitial. " + container.event + ", isPrecache: " + container.isPrecache;
-            else
-                document.getElementById("callbackContainer").innerHTML = "Appodeal. Interstitial. " + container.event + ", isPrecache: " + container.isPrecache;
-            });
-        Appodeal.setBannerCallbacks(function(container){
-            if(container.event == 'onLoaded')
-                document.getElementById("callbackContainer").innerHTML = "Appodeal. Banner. " + container.event + ", height: " + container.height + ", isPrecache: " + container.isPrecache;
-            document.getElementById("callbackContainer").innerHTML = "Appodeal. Banner. " + container.event;
-        });
-        Appodeal.setRewardedVideoCallbacks(function(container){
-            if(container.event == 'onClosed')
-                document.getElementById("callbackContainer").innerHTML = "Appodeal. Rewarded. " + container.event + ", finished: " + container.finished;
-            else if(container.event == 'onFinished')
-                document.getElementById("callbackContainer").innerHTML = "Appodeal. Rewarded. " + container.event + ", amount: " + container.amount + ", name: " + container.name;
-            else
-                document.getElementById("callbackContainer").innerHTML = "Appodeal. Rewarded. " + container.event;
-        });
-    }
+  
 }, false);
