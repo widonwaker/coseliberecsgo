@@ -27,11 +27,12 @@ document.addEventListener('deviceready', function () {
 		    var appKey = "054627b32c7c83d2e0d0582f21d0f12e486ca5aafda6845c";
 	}
             Appodeal.disableLocationPermissionCheck();
-            Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO);
-    Appodeal.initialize(appKey, Appodeal.REWARDED_VIDEO | Appodeal.INTERSTITIAL | Appodeal.SKIPPABLE_VIDEO | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.BANNER, function(result) {
+    Appodeal.initialize(appKey, Appodeal.REWARDED_VIDEO | Appodeal.INTERSTITIAL | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.BANNER, function(result) {
 	                if (result) { // returns true or false 
                 alert("Appodeal initialized");
-            }
+            } else {
+		    alert("error");
+	    }
         });
 	registerAdEvents();
 	
