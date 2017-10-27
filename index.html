@@ -9,36 +9,6 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
-
-    document.addEventListener("deviceready", function(){
-        var appodealKey;
-        if( /(android)/i.test(navigator.userAgent) ) { // set appkey for android || amazon-fireos
-          appKey = "0b9fe024c2f4c7e47d66020fa7214a0dd62d91d14e54ad45";
-        } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // set appkey for ios
-          appKey = "054627b32c7c83d2e0d0582f21d0f12e486ca5aafda6845c";
-        };
-
-        Appodeal.setLogLevel(Appodeal.LogLevel.verbose); // set logging level (none || debug || verbose)
-        Appodeal.setTesting(false); // set test mode enabled || disabled
-        Appodeal.setBannerAnimation(false);
-        Appodeal.setBannerBackground(false);
-        Appodeal.setSmartBanners(false);
-        Appodeal.set728x90Banners(false);
-        Appodeal.setChildDirectedTreatment(false);
-        Appodeal.muteVideosIfCallsMuted(true);
-        
-        setUserSettings(); // set user data
-        
-        Appodeal.setAutoCache(Appodeal.REWARDED_VIDEO, false);
-        Appodeal.initialize(appKey, Appodeal.INTERSTITIAL | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
-        
-        Appodeal.setCustomIntegerRule("rule_name", 1);
-        Appodeal.setCustomDoubleRule("rule_name", 1.0);
-        Appodeal.setCustomBooleanRule("rule_name", true);
-        Appodeal.setCustomStringRule("rule_name", "rule_value");
-        
-        registerAdEvents();
-    }, false);
     
     function setUserSettings() {
         Appodeal.setUserId("awesome_user");
@@ -114,6 +84,7 @@
     <button id="showTestScreen" onclick="showTestScreen();" style="width:100%;height:50px; margin-top:10px;background-color:white;color:red;">Show TestScreen</button>
     <button id="hideBanner" onclick="hideBanner();" style="width:100%;height:50px; margin-top:10px;background-color:white;color:red;">Hide Banner</button>
     <p id="callbackContainer">Callback events data</p>
+    Version X
 </body>
 
 </html>
