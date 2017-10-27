@@ -3,14 +3,14 @@
 
 <head>
     <title>Hello Appodeal</title>
-        <script type="text/javascript" src="cordova.js"></script>
+</head>
+
+<body style="background-color:red;/* position: fixed; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%;*/">
+    <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <!--<script type="text/javascript" src="js/init.js"></script>-->
     <script type="text/javascript">
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
-    function onDeviceReady() {
+
+    function initialize() {
         var appodealKey;
         if( /(android)/i.test(navigator.userAgent) ) { // set appkey for android || amazon-fireos
           appKey = "0b9fe024c2f4c7e47d66020fa7214a0dd62d91d14e54ad45";
@@ -52,7 +52,6 @@
                 console.log("Appodeal Ads Shown");
             }
         });
- 
     }
     
     function showRewardedVideo() {
@@ -107,10 +106,6 @@
         });
     }
     </script>
-</head>
-
-<body style="background-color:red;/* position: fixed; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%;*/" onload="onLoad()">
-
     <p style="font-size:25px;color:white;">Appodeal Cordova Demo</p>
     <button id="initialize" onclick="initialize();" style="width:100%;height:50px; margin-top:10px;background-color:white;color:red;">Initialize</button>
     <button id="interstitial" onclick="showInterstitial();" style="width:100%;height:50px; margin-top:10px;background-color:white;color:red;">Interstitial</button>
