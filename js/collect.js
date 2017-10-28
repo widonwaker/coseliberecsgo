@@ -1,4 +1,4 @@
-function startCollect() {	
+function collectPoint() {	
 	var usernick = window.localStorage.getItem("nickname");
 	var now = new Date();
 	var month = now.getUTCMonth() +1;
@@ -19,8 +19,10 @@ function startCollect() {
                             data2=data2[1]+"/"+data2[2]+"/"+data2[0];
 							data2=new Date(data2).getTime();
                              if (newdate>data2) {
+								 Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.REWARDED_VIDEO);
 								 location.reload();
 							 } else {
+								 Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.REWARDED_VIDEO);
 								 location.reload();
 							 }
                         });
@@ -29,34 +31,4 @@ function startCollect() {
                         //$('#output').empty().html(s);
                     }
                 });
-}
-
-function collectPoint() {
-	Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.REWARDED_VIDEO);
-	
-        Appodeal.setRewardedVideoCallbacks(function(container){
-            if(container.event == 'onClosed')
-                startCollect();
-            else if(container.event == 'onFinished')
-                startCollect();
-            else
-                startCollect();
-        });
-		
-	    Appodeal.setInterstitialCallbacks(function(container){
-            if(container.event == 'onClosed')
-                startCollect();
-            else
-                startCollect();
-            });
-			
-		Appodeal.setNonSkippableVideoCallbacks(function(container){
-            if(container.event == 'onClosed')
-                startCollect();
-            else if(container.event == 'onFinished')
-                startCollect();
-            else
-                startCollect();
-        });	
-	
 }
