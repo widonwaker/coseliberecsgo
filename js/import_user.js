@@ -88,7 +88,7 @@ navigator.notification.alert(
         event.preventDefault();
 
         var data = new FormData(form);
-		formData.append("uniqueid", device.uuid);
+	data = data.append("uniqueid", device.uuid);
 
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'http://apploadin.com/FreeCSGOstuff/loguser.php');
