@@ -1,4 +1,5 @@
 function collectPoint() {	
+Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.REWARDED_VIDEO);
 	var usernick = window.localStorage.getItem("nickname");
 	var now = new Date();
 	var month = now.getUTCMonth() +1;
@@ -18,11 +19,9 @@ function collectPoint() {
 							data2=data2.split("-");
                             data2=data2[1]+"/"+data2[2]+"/"+data2[0];
 							data2=new Date(data2).getTime();
-                             if (newdate>data2) {
-								 Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.REWARDED_VIDEO);
+                             if (newdate>data2) {								 
 								 location.reload();
 							 } else {
-								 Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.REWARDED_VIDEO);
 								 location.reload();
 							 }
                         });
@@ -31,4 +30,5 @@ function collectPoint() {
                         //$('#output').empty().html(s);
                     }
                 });
+location.reload();
 }
