@@ -33,14 +33,30 @@ function startCollect() {
 
 function collectPoint() {
 	Appodeal.show(Appodeal.INTERSTITIAL | Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.REWARDED_VIDEO);
-document.addEventListener('onRewardedVideoFinished', function(data){
-  startCollect();
-});
-document.addEventListener('onNonSkippableVideoFinished', function(){
-	startCollect();
-	});
-document.addEventListener('onInterstitialClosed', function(){
-	startCollect();
-	});
+	
+        Appodeal.setRewardedVideoCallbacks(function(container){
+            if(container.event == 'onClosed')
+                startCollect();
+            else if(container.event == 'onFinished')
+                startCollect();
+            else
+                startCollect();
+        });
+		
+	    Appodeal.setInterstitialCallbacks(function(container){
+            if(container.event == 'onClosed')
+                startCollect();
+            else
+                startCollect();
+            });
+			
+		Appodeal.setNonSkippableVideoCallbacks(function(container){
+            if(container.event == 'onClosed')
+                startCollect();
+            else if(container.event == 'onFinished')
+                startCollect();
+            else
+                startCollect();
+        });	
 	
 }
