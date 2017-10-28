@@ -82,12 +82,11 @@ navigator.notification.alert(
 
    var form = document.getElementById('logform'),
 	    user = document.getElementById('user'),
-        pass = document.getElementById('pass'),
-       uniqueid = document.getElementById('uniqueid').value = device.uuid;
+        pass = document.getElementById('pass');
 
     $('#logform').on('submit', function(event) {
         event.preventDefault();
-
+        var uniqueid = document.getElementById('uniqueid').value = device.uuid;
         var data = new FormData(form);
 
         var xhr = new XMLHttpRequest();
