@@ -53,13 +53,13 @@ function SuccessDismiss() {
 	location.reload(); 
 }	
 function FailedDismiss() {
-    //location.href='register.html';
+    location.reload(); 
 }	
 
 $('#regform').on('submit', function(event) {
     event.preventDefault();
 $.post("http://apploadin.com/FreeCSGOstuff/reguser.php", {username:$("#username").val(), uniqueid:device.uuid, refid:$("#refid").val(), password:$("#password").val()}).done(function(data){
-if(data){
+if(data=='true'){
 navigator.notification.alert(
     'You have been successfully registered. You can now log in.',  // message
     SuccessDismiss,         // callback
@@ -83,9 +83,11 @@ navigator.notification.alert(
    var form = document.getElementById('logform'),
 	    user = document.getElementById('user'),
         pass = document.getElementById('pass');
+		
 
     $('#logform').on('submit', function(event) {
         event.preventDefault();
+
         var uniqueid = document.getElementById('uniqueid').value = device.uuid;
         var data = new FormData(form);
 
