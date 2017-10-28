@@ -163,6 +163,19 @@ PullToRefresh.init({
     <script src="js/import_faqs.js"></script>    
     </div>
 
-
+<script>
+document.addEventListener("offline", onOffline, false);
+function offlineAppreso() {
+   //
+}	
+function onOffline() {
+navigator.notification.alert(
+    'You need an internet connection to use this application.',  // message
+    offlineAppreso,         // callback
+    'Warning!',            // title
+    'Ok'                  // buttonName
+);
+}
+</script>	
 </body>
 </html>
