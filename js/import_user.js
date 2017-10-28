@@ -81,14 +81,14 @@ navigator.notification.alert(
 /* Login */
 
    var form = document.getElementById('logform'),
-	    user = document.getElementById('user');
-        pass = document.getElementById('pass');
+	    user = document.getElementById('user'),
+        pass = document.getElementById('pass'),
+       uniqueid = document.getElementById('uniqueid').value = device.uuid;
 
     $('#logform').on('submit', function(event) {
         event.preventDefault();
 
         var data = new FormData(form);
-	data = data.append("uniqueid", device.uuid);
 
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'http://apploadin.com/FreeCSGOstuff/loguser.php');
