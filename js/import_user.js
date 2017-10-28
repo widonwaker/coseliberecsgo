@@ -20,14 +20,27 @@ function loadProfile () {
                     data: { nickname: usernick },
                     success: function (data, status) {
                         $.each(data, function (i, item) {
+							if (i===0) {
 	                        $('#loggedin').append('<p style="display: inline;">Logged in as</p> ') 
 							.append('<p class="important" style="display: inline;">'+item.nickname+'</p></h3>')
-							.append('<br><p style="display: inline;">You Referrer ID: </p>')
-							.append('<p class="important" style="display: inline;">'+item.id+'</p>')
 							.append($('<form />').attr('id','steamform')
 							.append('<label for="steam"><p>Your Steam Trade URL:</p></label>')
-				            .append('<input data-mini="true" type="text" name="steam" id="steam" />'))
+							.append($('<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">')
+                            .append($('<div class="ui-input-text ui-body-inherit ui-corner-all ui-mini ui-shadow-inset">')
+				 .append('<input data-mini="true" type="text" name="steam" id="steam" placeholder="https://steamcommunity.com/tradeoffer/new/?partner="/>'))
+							.append($('<div class="ui-btn ui-input-btn ui-corner-all ui-shadow">')
+							.append('Update<input type="submit" value="Update" />'))))
+							.append('<p style="display: inline;">You Referrer ID: </p>')
+							.append('<p class="important" style="display: inline;">'+item.id+'</p>');
+							}
+							if(i===1) {
+							$('#loggedin').append('<br><p style="display: inline;">Total referrals: </p>')
+							.append('<p class="important" style="display: inline;">'+item.referrals+'</p>')
 							.append('<br><a href="#" onClick="logout();" class="ui-btn ui-shadow">Logoutl</a>');
+							}
+							if(i===2) {
+							$("#chances").append('<p style="display: inline;">You currently have </p><p class="important" style="display: inline;">'+item.chances+'%</p><p style="display: inline;"> chances to win.</p>');
+							}
                         });
                     },
                     error: function (xhr, d, s) {
@@ -75,6 +88,7 @@ navigator.notification.alert(
         event.preventDefault();
 
         var data = new FormData(form);
+		formData.append("uniqueid", device.uuid);
 
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'http://apploadin.com/FreeCSGOstuff/loguser.php');
@@ -101,6 +115,15 @@ navigator.notification.alert(
                 if (response === "nope") {
                     navigator.notification.alert(
                     'Wrong username or password',  // message
+                    FailedDismiss,         // callback
+                    'Error!',            // title
+                    'Ok'                  // buttonName
+                   ); // fine alert
+                }
+				
+				if (response === "mismatch") {
+                    navigator.notification.alert(
+                    'This account is associated to another device.',  // message
                     FailedDismiss,         // callback
                     'Error!',            // title
                     'Ok'                  // buttonName

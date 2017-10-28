@@ -35,10 +35,13 @@ function loadBar () {
                 });
 };
 
+var usernick = window.localStorage.getItem("nickname");
+
 function dataCheck () {        
-	var usernick = window.localStorage.getItem("nickname");
-	if (window.localStorage.getItem("nickname") === null) {
+
+	if (usernick === null) {
         $("#collect").hide();
+		$("#chances").hide();
 		$("#collectWarn").html("Login your account to partecipate.");
         $("#collectWarn").show();
 		return;
