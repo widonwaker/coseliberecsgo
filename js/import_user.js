@@ -14,12 +14,12 @@ function logout() {
 }
 
 /*  Update Steam Trade URL */
-$('#steamform').on('submit', function(event) {
+function updateSteam(event) {
     event.preventDefault();
-$.post("http://apploadin.com/FreeCSGOstuff/profile.php", {nickname:usernick, updateSteam:$("#steam").val()}).done(function(data){
+$.post("http://apploadin.com/FreeCSGOstuff/profile.php", {nickname:usernick, steam:$("#steam").val()}).done(function(data){
 location.reload();
 });
-});
+}
 
 function loadProfile () {        
             $.ajax('http://apploadin.com/FreeCSGOstuff/profile.php', 
@@ -36,9 +36,9 @@ function loadProfile () {
 							.append('<label for="steam"><p>Your Steam Trade URL:</p></label>')
 							.append($('<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">')
                             .append($('<div class="ui-input-text ui-body-inherit ui-corner-all ui-mini ui-shadow-inset">')
-				 .append('<input data-mini="true" type="text" name="steam" id="steam" placeholder="https://steamcommunity.com/tradeoffer/new/?partner="/>'))
+				            .append('<input data-mini="true" type="text" name="steam" value="'+item.steam_trade+'" id="steam" placeholder="https://steamcommunity.com/tradeoffer/new/?partner="/>'))
 							.append($('<div class="ui-btn ui-input-btn ui-corner-all ui-shadow">')
-							.append('Update<input type="submit" value="Update" />'))))
+							.append('Update<input type="submit" value="Update" onclick="updateSteam(event)"/>'))))
 							.append('<p style="display: inline;">You Referrer ID: </p>')
 							.append('<p class="important" style="display: inline;">'+item.id+'</p>');
 							}
@@ -48,7 +48,7 @@ function loadProfile () {
 							.append('<br><a href="#" onClick="logout();" class="ui-btn ui-shadow">Logoutl</a>');
 							}
 							if(i===2) {
-							$("#chances").append('<p style="display: inline;">You currently have </p><p class="important" style="display: inline;">'+item.chances+'%</p><p style="display: inline;"> chances to win.</p>');
+							$("#chances").empty().append('<p style="display: inline;">You currently have </p><p class="important" style="display: inline;">'+item.chances+'%</p><p style="display: inline;"> chances to win.</p>');
 							}
                         });
                     },
