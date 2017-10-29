@@ -16,7 +16,6 @@
    
 </head>
 <body>
-<script src="js/appodeal.js"></script>
 
 	<div data-role="page" data-theme="a" id="home">
     <script src="js/collect.js"></script>
@@ -56,6 +55,7 @@ PullToRefresh.init({
   onRefresh: function() { 
 	 loadBar();
      dataCheck();
+	 loadProfile();
   },
     distThreshold : 50, // Minimum distance required to trigger the refresh.
     iconArrow: '<span class="fa fa-lg fa-arrow-down"></span>', // The icon for both instructionsPullToRefresh and instructionsReleaseToRefresh
@@ -162,7 +162,6 @@ PullToRefresh.init({
         </div>
     <script src="js/import_faqs.js"></script>    
     </div>
-
 <script>
 document.addEventListener("offline", onOffline, false);
 function offlineAppreso() {
