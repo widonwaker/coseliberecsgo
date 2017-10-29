@@ -13,12 +13,21 @@ function logout() {
 	location.reload();
 }
 
+/*  Update Steam Trade URL */
+$('#steamform').on('submit', function(event) {
+    event.preventDefault();
+$.post("http://apploadin.com/FreeCSGOstuff/profile.php", {nickname:usernick, updateSteam:$("#steam").val()}).done(function(data){
+location.reload();
+});
+});
+
 function loadProfile () {        
             $.ajax('http://apploadin.com/FreeCSGOstuff/profile.php', 
                 {
                     type: 'POST',
                     data: { nickname: usernick },
                     success: function (data, status) {
+						$('#loggedin').empty();
                         $.each(data, function (i, item) {
 							if (i===0) {
 	                        $('#loggedin').append('<p style="display: inline;">Logged in as</p> ') 
