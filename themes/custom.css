@@ -77,6 +77,14 @@ a.linkoff {
 #loggedin {
 	font-size: 22px !important;
 }
+
 #collect {
 	font-family: 'Saira Extra Condensed', sans-serif !important;
+}
+
+.rewardimg {
+	width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
