@@ -27,6 +27,8 @@ function loadBar () {
                             barFilter.style.width=percentBar+"%";
 							if (parseInt(item.attuale) >= parseInt(item.obiettivo)) { item.attuale = item.obiettivo; }
 	                        $('#goal').empty().append('Current goal: '+item.attuale+' / '+item.obiettivo+' points');
+							$('#crate').empty().append('<br><p style="display: inline;">Current Reward: </p><p class="important" style="display: inline;">'+item.descrizione+'</p> <p style="display: inline;">('+item.quantity+') available</p><br />')
+							                   .append('<img class="rewardimg" src="'+item.immagine+'" />');
                         });
                     },
                     error: function (xhr, d, s) {
