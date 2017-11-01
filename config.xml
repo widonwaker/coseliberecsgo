@@ -2,10 +2,10 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.apploadin.freecsgostuff" 
-        version   = "1.0.2"
-	ios-CFBundleVersion = "1.0.2"> 
+        version   = "1.0.3"
+	ios-CFBundleVersion = "1.0.3"> 
 
-    <name>Free CS GO Stuff</name>
+    <name>Get CS GO Stuff</name>
 
     <description>
         Win free crates, skins, keys for CS:GO.
@@ -46,7 +46,7 @@
 	<plugin name="cordova-plugin-dialogs" source="npm"/>
 	<plugin name="cordova-plugin-device" source="npm"/>
 	<plugin name="cordova-plugin-statusbar" source="npm"/>
-	<!--<plugin name="cordova-plugin-network-information" source="npm"/>-->
+	<plugin name="cordova-plugin-network-information" source="npm"/>
 	<!--<plugin name="cordova-plugin-geolocation" source="npm"/>-->
 	<plugin name="cordova-plugin-globalization" source="npm" />
 	
@@ -126,10 +126,10 @@
         <false/>
         </gap:config-file>
 	<gap:config-file platform="ios" parent="CFBundleVersion">
-                <string>1.0.2</string>
+                <string>1.0.3</string>
         </gap:config-file>
 	<gap:config-file platform="ios" parent="CFBundleShortVersionString">
-                <string>1.0.2</string>
+                <string>1.0.3</string>
         </gap:config-file>
     </platform>
 
